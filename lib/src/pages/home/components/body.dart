@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:persona/src/bloc/personas_bloc.dart';
 import 'package:persona/src/models/persona_model.dart';
 
-class PersonaPage extends StatelessWidget {
+class Body extends StatelessWidget {
   final personasBloc = new PersonasBloc();
   @override
   Widget build(BuildContext context) {
@@ -30,14 +30,25 @@ class PersonaPage extends StatelessWidget {
                         personasBloc.borrarPersona(personas[i].id),
                     child: ListTile(
                       leading: CircleAvatar(
-                        child: Text('${i + 1}'), //${personas[i].id}
+                        backgroundColor:
+                            Colors.primaries[i % Colors.primaries.length],
+                        child: Text(
+                          '${i + 1}',
+                          style: TextStyle(color: Colors.white),
+                        ), //${personas[i].id}
                       ),
-                      title: Text(personas[i].nombre),
+                      title: Text(
+                        personas[i].nombre,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                       subtitle: Text(
                           'ID: ${personas[i].id} \n${personas[i].direccion} \n${personas[i].telefono}'),
-                      trailing: Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Colors.grey,
+                      trailing: Padding(
+                        padding: EdgeInsets.only(top: 15),
+                        child: Icon(
+                          Icons.keyboard_arrow_right,
+                          color: Colors.grey,
+                        ),
                       ),
                     ),
                   ));
