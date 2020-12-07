@@ -42,12 +42,12 @@ class Body extends StatelessWidget {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Text(
-                          'ID: ${personas[i].id} \n${personas[i].direccion} \n${personas[i].telefono}'),
+                          '${personas[i].direccion} \n${personas[i].telefono}'),
                       trailing: Padding(
-                        padding: EdgeInsets.only(top: 15),
+                        padding: EdgeInsets.only(top: 10),
                         child: Icon(
                           Icons.keyboard_arrow_right,
-                          color: Colors.grey,
+                          color: Colors.black,
                         ),
                       ),
                     ),

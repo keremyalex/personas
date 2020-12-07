@@ -64,9 +64,6 @@ class _BodyState extends State<Body> {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
             onPressed: () => {
-              print('Nombre: ' + nombreIngresado.text),
-              print('Direccion: ' + direccionIngresado.text),
-              print('Telefono: ' + telefonoIngresado.text),
               _agregarPersona(nombreIngresado.text, direccionIngresado.text,
                   int.parse(telefonoIngresado.text)),
               Navigator.pop(context)
@@ -81,10 +78,6 @@ class _BodyState extends State<Body> {
 
   void _agregarPersona(
       String futureNombre, String futureDireccion, int futureTelefono) async {
-    //String futureNombre = 'Alex Paco';
-    //String futureDireccion = 'Barrio Telchi';
-    //int futureTelefono = 75664056;
-
     if (futureNombre != null &&
         futureDireccion != null &&
         futureTelefono != null) {
